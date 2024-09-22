@@ -44,27 +44,25 @@ int main(void){
         if(d[curV] < curD) continue; //최단거리 테이블값과 일치하지 않으면 건너뜀
         
         //현재 정점에서 갈 수 있는 인접 정점에 대하여 순회
-        for(int i=0; i<adj[curV].size(); i++){
-            int destV = adj[curV][i].second;
-            int destD = adj[curV][i].first;
-        
+        for(auto node : adj[curV]){
+            int destV = node.second;
+            int destD = node.first;
+            
             // d[이전 정점] + 가중치 가 더 작다면 갱신
             if(d[destV] > d[curV] + destD){
                 d[destV] = d[curV] + destD;
                 q.push({-d[destV], destV});
             }
-        
-    }
+            
+        }
         
     }
     
     for(int i=1; i<=v; i++){
         if(d[i] == INF){
-//            cout<<"INF"<<"\n";
             printf("INF\n");
         }
         else{
-//            cout<<d[i]<<"\n";
             printf("%d\n",d[i]);
         }
         
