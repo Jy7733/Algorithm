@@ -6,7 +6,7 @@ using namespace std;
 vector<long long> d;
 vector<vector<int>> pre;
 vector<vector<pair<int, int>>> adj;
-set<int> path; // 중복을 없애기 위해 set 사용
+set<int> path;
 
 priority_queue<pair<long long, int>, vector<pair<long long, int>>, greater<pair<long long, int>>> q;
 
@@ -18,16 +18,16 @@ void dijkstra(int start) {
     q.push({0, start});
 
     while (!q.empty()) {
-        pair<long long, int> curr = q.top(); // 자료형 변경
+        pair<long long, int> curr = q.top(); 
         int currCity = curr.second;
-        long long currCost = curr.first; // 자료형 변경
+        long long currCost = curr.first; 
         q.pop();
 
         if (currCost > d[currCity]) continue;
 
         for (auto node : adj[currCity]) {
             int destCity = node.second;
-            long long destCost = node.first; // 자료형 변경
+            long long destCost = node.first; 
 
             if (d[destCity] > d[currCity] + destCost) {
                 d[destCity] = d[currCity] + destCost;
@@ -50,7 +50,7 @@ void DFS(int x) {
     }
 
     for (int prevCity : pre[x]) {
-        path.insert(prevCity); // 중복을 방지하기 위해 set에 추가
+        path.insert(prevCity); 
         DFS(prevCity);
     }
 }
@@ -72,20 +72,14 @@ int main(void) {
         adj[v].push_back({w, u});
     }
 
-    dijkstra(a); // 다익스트라 실행
+    dijkstra(a); 
 
-    DFS(b);  // 도착점에서 출발점으로 경로를 역추적
-
-    // path는 set이므로 중복이 제거되어 있습니다.
-    vector<int> result(path.begin(), path.end());
-    sort(result.begin(), result.end()); // 오름차순 정렬
-
-    cout << result.size() << "\n";  // 경로에 포함된 도시의 개수 출력
+    DFS(b);
     
-    for (int city : result) {
-        cout << city << " "; // 도시 번호 출력
+    cout << path.size() << "\n"; 
+    
+    for (int city : path) {
+        cout << city << " "; 
     }
-    cout << "\n"; // 마지막 줄바꿈 추가
-
-    return 0;
+    cout << "\n"; 
 }
