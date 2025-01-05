@@ -4,6 +4,7 @@
 
 ### 풀이 및 정답 ✅
 [풀이](https://github.com/Jy7733/Algorithm/blob/main/%EB%B0%B1%EC%A4%80/Silver/15990.%E2%80%851%EF%BC%8C%E2%80%852%EF%BC%8C%E2%80%853%E2%80%85%EB%8D%94%ED%95%98%EA%B8%B0%E2%80%855/solution.md)
+
 [코드](https://github.com/Jy7733/Algorithm/blob/main/%EB%B0%B1%EC%A4%80/Silver/15990.%E2%80%851%EF%BC%8C%E2%80%852%EF%BC%8C%E2%80%853%E2%80%85%EB%8D%94%ED%95%98%EA%B8%B0%E2%80%855/1%EF%BC%8C%E2%80%852%EF%BC%8C%E2%80%853%E2%80%85%EB%8D%94%ED%95%98%EA%B8%B0%E2%80%855.cc)
 
 ### 성능 요약
