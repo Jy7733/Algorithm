@@ -19,7 +19,6 @@ int main(void){
 
     q.push({1,0}); // 시작점 세팅 
     visited[1] = true;
-    int result = 0;
 
     while(!q.empty()){
         int cur = q.front().first; //현재 위치  
@@ -49,7 +48,4 @@ int main(void){
         }
 
     }
-    
-    cout<<result<<"\n";
-
 }
