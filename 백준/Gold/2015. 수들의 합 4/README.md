@@ -2,6 +2,8 @@
 
 [문제 링크](https://www.acmicpc.net/problem/2015) 
 
+[풀이 링크](백준/Gold/2015. 수들의 합 4/Solution.md)
+
 ### 성능 요약
 
 메모리: 13628 KB, 시간: 44 ms
