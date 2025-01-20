@@ -2,7 +2,7 @@
 
 [문제 링크](https://www.acmicpc.net/problem/2015) 
 
-[풀이 링크](백준/Gold/2015. 수들의 합 4/Solution.md)
+[풀이 링크](https://github.com/Jy7733/Algorithm/blob/main/%EB%B0%B1%EC%A4%80/Gold/2015.%E2%80%85%EC%88%98%EB%93%A4%EC%9D%98%E2%80%85%ED%95%A9%E2%80%854/Solution.md)
 
 ### 성능 요약
 
