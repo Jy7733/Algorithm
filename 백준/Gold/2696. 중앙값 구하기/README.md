@@ -1,7 +1,9 @@
 # [Gold II] 중앙값 구하기 - 2696 
 
 [문제 링크](https://www.acmicpc.net/problem/2696) 
+
 [✅ 풀이 링크](https://github.com/Jy7733/Algorithm/tree/main/%EB%B0%B1%EC%A4%80/Gold/2696.%E2%80%85%EC%A4%91%EC%95%99%EA%B0%92%E2%80%85%EA%B5%AC%ED%95%98%EA%B8%B0)
+
 [코드 링크](https://github.com/Jy7733/Algorithm/blob/main/%EB%B0%B1%EC%A4%80/Gold/2696.%E2%80%85%EC%A4%91%EC%95%99%EA%B0%92%E2%80%85%EA%B5%AC%ED%95%98%EA%B8%B0/%EC%A4%91%EC%95%99%EA%B0%92%E2%80%85%EA%B5%AC%ED%95%98%EA%B8%B0.cc)
 
 ### 성능 요약
