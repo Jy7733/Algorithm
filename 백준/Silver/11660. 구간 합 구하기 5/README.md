@@ -2,6 +2,9 @@
 
 [문제 링크](https://www.acmicpc.net/problem/11660) 
 
+[✅ 풀이](https://github.com/Jy7733/Algorithm/blob/main/%EB%B0%B1%EC%A4%80/Silver/11660.%E2%80%85%EA%B5%AC%EA%B0%84%E2%80%85%ED%95%A9%E2%80%85%EA%B5%AC%ED%95%98%EA%B8%B0%E2%80%855/solution.md)
+
+
 ### 성능 요약
 
 메모리: 6004 KB, 시간: 240 ms
