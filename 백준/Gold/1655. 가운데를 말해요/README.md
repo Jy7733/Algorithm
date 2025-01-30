@@ -2,6 +2,10 @@
 
 [문제 링크](https://www.acmicpc.net/problem/1655) 
 
+[풀이 링크](https://github.com/Jy7733/Algorithm/blob/main/%EB%B0%B1%EC%A4%80/Gold/1655.%E2%80%85%EA%B0%80%EC%9A%B4%EB%8D%B0%EB%A5%BC%E2%80%85%EB%A7%90%ED%95%B4%EC%9A%94/solution.md)
+
+[코드 링크](https://github.com/Jy7733/Algorithm/blob/main/%EB%B0%B1%EC%A4%80/Gold/1655.%E2%80%85%EA%B0%80%EC%9A%B4%EB%8D%B0%EB%A5%BC%E2%80%85%EB%A7%90%ED%95%B4%EC%9A%94/%EA%B0%80%EC%9A%B4%EB%8D%B0%EB%A5%BC%E2%80%85%EB%A7%90%ED%95%B4%EC%9A%94.cc)
+
 ### 성능 요약
 
 메모리: 3568 KB, 시간: 28 ms
