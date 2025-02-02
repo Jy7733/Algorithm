@@ -2,7 +2,7 @@
 
 [문제 링크](https://www.acmicpc.net/problem/1016) 
 
-[✅ 풀이 링크](https://github.com/Jy7733/Algorithm/tree/main/%EB%B0%B1%EC%A4%80/Gold/1016.%E2%80%85%EC%A0%9C%EA%B3%B1%E2%80%85%E3%84%B4%E3%84%B4%E2%80%85%EC%88%98)
+[✅ 풀이 링크](https://github.com/Jy7733/Algorithm/blob/main/%EB%B0%B1%EC%A4%80/Gold/1016.%E2%80%85%EC%A0%9C%EA%B3%B1%E2%80%85%E3%84%B4%E3%84%B4%E2%80%85%EC%88%98/solution.md)
 
 ### 성능 요약
 
