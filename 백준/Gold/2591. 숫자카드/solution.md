@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/705d95f1-bffb-42c8-b49f-c78909bc1e2d)## 💡 알고리즘 분류
+## 💡 알고리즘 분류
 
 - 다이나믹 프로그래밍
 
