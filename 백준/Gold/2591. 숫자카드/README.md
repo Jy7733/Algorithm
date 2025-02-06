@@ -1,5 +1,7 @@
 # [Gold V] 숫자카드 - 2591 
 
+### [✅ 풀이 링크](https://github.com/Jy7733/Algorithm/blob/main/%EB%B0%B1%EC%A4%80/Gold/2591.%E2%80%85%EC%88%AB%EC%9E%90%EC%B9%B4%EB%93%9C/solution.md)
+
 [문제 링크](https://www.acmicpc.net/problem/2591) 
 
 ### 성능 요약
