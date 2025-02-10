@@ -2,6 +2,8 @@
 
 [문제 링크](https://www.acmicpc.net/problem/1253) 
 
+### [ ✅ 풀이 ](https://github.com/Jy7733/Algorithm/blob/main/%EB%B0%B1%EC%A4%80/Gold/1253.%E2%80%85%EC%A2%8B%EB%8B%A4/solution.md)
+
 ### 성능 요약
 
 메모리: 127164 KB, 시간: 1196 ms
