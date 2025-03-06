@@ -1,5 +1,7 @@
 # [Silver II] 나무 자르기 - 2805 
 
+## [✅ 풀이 바로가기]( https://github.com/Jy7733/Algorithm/blob/main/%EB%B0%B1%EC%A4%80/Silver/2805.%E2%80%85%EB%82%98%EB%AC%B4%E2%80%85%EC%9E%90%EB%A5%B4%EA%B8%B0/solution.md)
+
 [문제 링크](https://www.acmicpc.net/problem/2805) 
 
 ### 성능 요약
