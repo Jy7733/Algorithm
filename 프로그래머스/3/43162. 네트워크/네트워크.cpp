@@ -1,31 +1,28 @@
-#include <bits/stdc++.h>
+#include <string>
+#include <vector>
 
 using namespace std;
+bool visited[201];
+int answer = 0;
 
-bool visited[200];
-vector<vector<int>> adj(200);
-
-void DFS(int start, vector<vector<int>> computers, int n){
-    visited[start] = true;
+void DFS(int dest, int n, vector<vector<int>> computers){
+    visited[dest] = true;
     
     for(int i=0; i<n; i++){
-        if(!visited[i] && computers[start][i] == 1)
-            DFS(i, computers, n);
+        if(computers[dest][i] == 1 && !visited[i]){
+            DFS(i, n, computers);
+        }
     }
-    
 }
 
 int solution(int n, vector<vector<int>> computers) {
-    int answer = 0;
-    
     for(int i=0; i<n; i++){
-        if(!visited[i]){
-            DFS(i, computers, n);
-            answer++;
+        for(int j=0; j<n; j++){
+            if(computers[i][j] == 1 && !visited[j]){
+                DFS(j, n, computers);
+                answer++;
+            }
         }
     }
-    
     return answer;
 }
-
-
