@@ -4,22 +4,21 @@ using namespace std;
 
 long long solution(int n, vector<int> works) {
     long long answer = 0;
-    priority_queue<int> pq;
-
-    for(auto work : works) pq.push(work);
+    priority_queue<int> task; 
+    for(int work : works){
+        task.push(work);
+    }
     
     for(int i=0; i<n; i++){
-        int curTop = pq.top();
-        if(curTop - 1 >= 0){
-            pq.pop();
-            pq.push(curTop - 1);
-        }
+        int curTask = task.top();
+        if(curTask == 0) continue;
+        task.pop();
+        task.push(curTask-1);
     }
     
-    while(!pq.empty()){
-        answer += (pq.top() * pq.top());
-        pq.pop();  
+    while(!task.empty()){
+        answer+=( task.top() * task.top());
+        task.pop();
     }
-    
     return answer;
 }
