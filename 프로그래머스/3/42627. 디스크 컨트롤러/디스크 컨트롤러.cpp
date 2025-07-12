@@ -26,7 +26,6 @@ int solution(vector<vector<int>> jobs) {
     priority_queue<Job, vector<Job>, cmp> pq; 
     int n = jobs.size(); 
     
-    int end = 0;
     int sum = 0;
     int time = 0;
     int cnt = 0; 
@@ -57,9 +56,3 @@ int solution(vector<vector<int>> jobs) {
     return answer;
 }
 
-// 우선순위
-// 1. 작업 소요시간이 짧은 것
-// 2. 요청 시각이 빠른 것
-// 3. 번호가 작은 것
-
-// pq: (1,2,3) (2,5,7) (3,7,8)
