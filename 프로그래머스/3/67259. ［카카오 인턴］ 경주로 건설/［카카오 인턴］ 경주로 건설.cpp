@@ -1,65 +1,62 @@
 #include <bits/stdc++.h>
-#define INF (~0U >> 2)
+#define INF (~0U >> 2) 
 
 using namespace std;
 
-int dx[] = {-1,1,0,0};
-int dy[] = {0,0,-1,1};
+// 0: 상 / 1 : 하 / 2: 좌 / 3: 우 
+int dx[] = {-1, 1, 0, 0};
+int dy[] = {0, 0, -1, 1};
 
-int BFS(vector<vector<int>> board){
-    int n = board.size();
-    int cost[4][n][n]; 
+int solution(vector<vector<int>> board) {
+    int answer = INF;
+    queue<tuple<int,int,int>> q; 
     
-    for(int i=0; i<4; i++){
+    int n = board.size(); 
+    int price[n][n][4]; 
+    // price[i][j][z] = (i,j) 까지 z 방향으로 갔을 때 가격 
+    
+    // 초기화 
+    for(int i=0; i<n; i++){
         for(int j=0; j<n; j++){
-            for(int z=0; z<n; z++){
-                cost[i][j][z] = INF;
+            for(int z=0; z<4; z++){
+                price[i][j][z] = INF; 
             }
         }
     }
     
-    queue<tuple<int,int,int,int>> q; 
-    for(int dir = 0; dir<4; dir++){
-        q.push({dir,0,0,0});
-        cost[dir][0][0] = 0;
+    for(int i=0; i<4; i++){
+        q.push({0,0,i});
+        price[0][0][i] = 0; 
     }
     
     while(!q.empty()){
-        auto [cdir, cx, cy, cprice] = q.front();
-        q.pop();
+        auto [cx, cy, cdir] = q.front(); q.pop();
         
-        for(int dir = 0; dir < 4; dir++){
-            int nx = cx + dx[dir];
-            int ny = cy + dy[dir];
+        for(int i=0; i<4; i++){
+            int nx = cx + dx[i]; 
+            int ny = cy + dy[i]; 
+            int ndir = i; 
+            int nprice =0; 
             
-            if(nx < 0 || nx >= n || ny < 0 || ny >= n) continue;  //보드 범위를 넘어가는 경우
-            if(board[nx][ny] != 0) continue; //벽이 있어 이동하지 못하는 경우
+            if(nx < 0 || nx >= n || ny < 0 || ny >= n) continue; 
+            if(board[nx][ny] == 1) continue;  //갈 수 없는 경우 
             
-            int nprice = 0;
-            if(cdir == dir){
-                nprice = 100;
+            if(i == cdir){
+                nprice = price[cx][cy][cdir] + 100; 
             }
             else{
-                nprice = 600;
+                nprice = price[cx][cy][cdir] + 600; 
             }
-            
-            if(cost[dir][nx][ny] >= cost[cdir][cx][cy] + nprice){
-                cost[dir][nx][ny] = cost[cdir][cx][cy] + nprice;
-                q.push({dir,nx,ny,cost[cdir][cx][cy] + nprice});
+            if(nprice < price[nx][ny][ndir]) {
+                price[nx][ny][ndir] = nprice; 
+                q.push({nx,ny,ndir}); 
             }
         }
     }
     
-    int tmp = INF;
     for(int i=0; i<4; i++){
-        tmp = min(tmp, cost[i][n-1][n-1]);
+        answer = min(price[n-1][n-1][i], answer); 
     }
-
-    return tmp;
-}
-
-int solution(vector<vector<int>> board) {
-    int answer = 0;
-    answer = BFS(board);
+    
     return answer;
 }
