@@ -1,0 +1,26 @@
+-- 코드를 입력하세요
+SELECT
+    rs.AUTHOR_ID AS AUTHOR_ID,
+    rs.AUTHOR_NAME AS AUTHOR_NAME,
+    rs.CATEGORY AS CATEGORY,
+    rs.TOTAL_SALES AS TOTAL_SALES
+
+
+-- 2022년 1월 도서 판매 데이터 기준
+FROM
+    (SELECT 
+        bs.BOOK_ID, 
+        SUM(bs.SALES * b.PRICE) AS TOTAL_SALES,
+        b.AUTHOR_ID AS AUTHOR_ID,
+        a.AUTHOR_NAME AS AUTHOR_NAME,
+        b.CATEGORY AS CATEGORY,
+        b.PRICE AS PRICE
+    FROM BOOK_SALES AS bs 
+        JOIN BOOK b ON b.BOOK_ID = bs.BOOK_ID
+        JOIN AUTHOR a ON a.AUTHOR_ID = b.AUTHOR_ID
+    WHERE bs.SALES_DATE BETWEEN '2022-01-01' AND '2022-01-31'
+    GROUP BY b.AUTHOR_ID, b.CATEGORY
+    ) AS rs 
+
+-- 저자 ID 오름차순 & 카테고리 내림차순 
+ORDER BY AUTHOR_ID ASC, CATEGORY DESC;
