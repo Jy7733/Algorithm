@@ -1,14 +1,17 @@
 -- 코드를 입력하세요
+-- 년 / 월 / 성별 별로 상품을 구매한 회원 수 
+-- order by 년 -> 월 > 성별 asc 
+-- 성별 정보가 없으면 제외 ㅇ
 SELECT
-YEAR(os.SALES_DATE) as YEAR,
-MONTH(os.SALES_DATE) as MONTH,
-ui.GENDER,
-COUNT(DISTINCT ui.USER_ID) AS USERS 
+year(os.sales_date) as year,
+month(os.sales_date) as month, 
+users.gender, 
+count(distinct users.user_id) as users
+from 
 
-from USER_INFO ui 
-    JOIN ONLINE_SALE os ON ui.USER_ID = os.USER_ID 
-where GENDER is not null and os.SALES_AMOUNT > 0
-group by YEAR(os.SALES_DATE), MONTH(os.SALES_DATE), ui.GENDER 
+(select user_id, gender from user_info where gender is not null) users
+join
+online_sale os on users.user_id = os.user_id 
 
--- Order by 년 - 월 - 성별 
-order by YEAR, MONTH, ui.GENDER;
+group by year(os.sales_date), month(os.sales_date), users.gender
+order by year, month, gender 
