@@ -1,14 +1,17 @@
+-- 코드를 입력하세요
+
+
 SELECT
-    YEAR(os.sales_date) AS year,
-    MONTH(os.sales_date) AS month,
-    COUNT(DISTINCT os.user_id) AS purchased_users,
-    ROUND(
-        COUNT(DISTINCT os.user_id) / 
-        (SELECT COUNT(*) FROM user_info WHERE YEAR(joined) = 2021),
-        1
-    ) AS purchased_ratio
-FROM online_sale os
-JOIN user_info u ON os.user_id = u.user_id
-WHERE YEAR(u.joined) = 2021
-GROUP BY YEAR(os.sales_date), MONTH(os.sales_date)
-ORDER BY year, month;
+year(os.sales_date) as year,
+month(os.sales_date) as month,
+count(distinct os.user_id) as purchased_users,
+round(
+    count(distinct os.user_id)/
+    (select count(*) from user_info where year(joined) = '2021'),
+    1
+) as purchased_ratio
+from
+(select user_id from user_info where year(joined) = '2021') u
+join online_sale os on u.user_id = os.user_id 
+group by year(os.sales_date), month(os.sales_date)
+order by year, month
