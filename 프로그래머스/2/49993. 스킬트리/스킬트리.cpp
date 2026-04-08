@@ -4,28 +4,27 @@ using namespace std;
 
 int solution(string skill, vector<string> skill_trees) {
     int answer = 0;
-    map<char,int> m; 
+    map<char,int> m;
+    
     for(auto s : skill){
         m[s]++;
     }
     
-    for(string st : skill_trees){
-        int i=0; //포인터 역할 
-        bool able = true;
-        for(char c : st){
-            // skill에 명시된 skill 인 경우
+    for(auto st : skill_trees){
+        int i=0;
+        bool able = true; 
+        for(auto c : st){
             if(m[c] > 0){
-                if(c == skill[i]){
-                    i++;
-                }
+                if(c==skill[i]) i++;
                 else{
                     able = false;
-                    continue;
+                    break;
                 }
             }
         }
-        if(able) answer++;
+        if(able) answer+=1; 
     }
+    
     
     return answer;
 }
