@@ -7,24 +7,23 @@ typedef long long ll;
 long long solution(int n, vector<int> times) {
     long long answer = 0;
     
-    ll maxTime = *max_element(times.begin(), times.end());
     ll left = 0;
-    ll right = maxTime * n;
+    ll right = *max_element(times.begin(), times.end()) * n; 
     
     while(left <= right){
-        ll people = 0;
-        
         ll mid = (left + right)/2;
+        ll people =0; 
+        
         for(auto time : times){
-            people += (mid / time);
+            people += mid/time; 
         }
         
         if(people >= n){
-            answer = mid;
+            answer = mid; 
             right = mid-1;
         }
-        else if(people < n){
-            left = mid + 1;
+        else{
+            left = mid+1; 
         }
     }
     return answer;
